@@ -4,7 +4,7 @@ import org.junit.*;
 
 public class ArrayStringsTest {
 
-    ArraysStrings arraysStrings = new ArraysStrings();
+    private ArraysStrings arraysStrings = new ArraysStrings();
 
         @Test
         public void isUniqueTrueIfAllUniqueCharacters(){
@@ -14,6 +14,16 @@ public class ArrayStringsTest {
         @Test
         public void isUniqueFalseIfNotUniqueCharacters() {
             Assert.assertFalse(arraysStrings.isUnique("458d8"));
+        }
+
+        @Test
+        public void isPermutationTrueIfPermutation() {
+            Assert.assertTrue(arraysStrings.isPermutation("Kmdukkr tyG", "gRkt      mKydkU"));
+        }
+
+        @Test
+        public void isPermutationFalseIfNotPermutation() {
+            Assert.assertFalse(arraysStrings.isPermutation("Khddjkytgn", "Khdjrkyto"));
         }
 
 
