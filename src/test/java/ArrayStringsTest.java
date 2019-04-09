@@ -26,5 +26,15 @@ public class ArrayStringsTest {
             Assert.assertFalse(arraysStrings.isPermutation("Khddjkytgn", "Khdjrkyto"));
         }
 
+        @Test
+        public void isPalindromePermutationFalseIfNotPalindrome() {
+            Assert.assertFalse(arraysStrings.isPermutationPalindrome("nem"));
+        }
+
+        @Test
+        public void isPalindromePermutationTrueIfPalindrome(){
+            Assert.assertTrue(arraysStrings.isPermutationPalindrome("gnunug"));
+        }
+
 
 }
