@@ -36,5 +36,15 @@ public class ArrayStringsTest {
             Assert.assertTrue(arraysStrings.isPermutationPalindrome("gnunug"));
         }
 
+        @Test
+        public void oneAwayFalseIfMoreThanOneDifference() {
+            Assert.assertFalse(arraysStrings.oneAway("kek", " kekk"));
+        }
+
+        @Test
+        public void oneAwayTrueIfMaxOneDifference() {
+            Assert.assertTrue(arraysStrings.oneAway("kek", "kekk"));
+        }
+
 
 }

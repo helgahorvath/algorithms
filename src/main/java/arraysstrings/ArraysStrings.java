@@ -121,6 +121,48 @@ public class ArraysStrings {
         return Arrays.equals(str1Array, str2Array);
     }
 
+    /**
+     * Determines whether two strings max one edit away from each other.
+
+     *
+     * @param  str1 first string
+     * @param  str2 second string
+     * @return      <code>true</code> if the strings are max one edit away
+     *              <code>false</code> otherwise
+     */
+    public boolean oneAway(String str1, String str2) {
+        if (str1.equals(str2)) {
+            return true;
+        }
+
+        int diffs = 0;
+
+        if (str1.length() == str2.length()) {
+            for (int i = 0; i < str1.length() ; i++) {
+                if (str1.charAt(i) == str2.charAt(i)) {
+                    continue;
+                } else {
+                    diffs++;
+                }
+            }
+        } else {
+            diffs++;
+            String longerStr = str1.length() > str2.length()? str1 : str2;
+            String shorterStr = str1.length() > str2.length()? str2 : str1;
+            if (longerStr.length() - shorterStr.length() > 1) {
+                return false;
+            }
+            for (int i = 0; i < shorterStr.length(); i++) {
+                if (longerStr.charAt(i) == shorterStr.charAt(i)) {
+                    continue;
+                } else {
+                    return longerStr.substring(i+1).equals(shorterStr.substring(i));
+                }
+            }
+        }
+        return diffs < 2;
+    }
+
 
     public static void main(String[] args)
     {
